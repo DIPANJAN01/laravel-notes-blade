@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="utf-8">
@@ -18,15 +18,15 @@
 
 <body class="antialiased">
 
-
     <nav
-        class="z-50 flex flex-row gap-5 py-4 px-7 text-xl bg-rose-800 text-white shadow-lg sticky top-0 mb-2 opacity-85">
-        <div><a href="{{ route('notes.index') }}">NOTES</a></div>
-        <div><a href="{{ route('notes.index') }}">Home</a></div>
-        <div><a href="#">Register</a></div>
-        <div><a href="#">Login</a></div>
-        <div><a href="#">Logout</a></div>
-
+        class="z-50  py-4 px-7 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl bg-rose-800 text-white shadow-lg sticky top-0 mb-2 bg-opacity-85">
+        <ul class="flex flex-row gap-5">
+            <li><a href="{{ route('notes.index') }}">NOTES</a></li>
+            <li><a href="{{ route('notes.index') }}">Home</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
     </nav>
 
     <div>
