@@ -52,6 +52,14 @@
         @apply bg-blue-500 hover:bg-blue-700;
     }
     .btn-negative {
-        @apply bg-red-900 hover:bg-red-800;
+        @apply bg-pink-800 hover:bg-pink-900;
+    }
+
+    .form {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-items: center;
+        @apply gap-4;
+        /* @apply sm:grid-cols-1; */
     }
 }

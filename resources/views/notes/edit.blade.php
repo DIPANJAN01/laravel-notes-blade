@@ -11,10 +11,16 @@
                     class="px-1 py-1.5 bg-inherit outline-none w-full placeholder:italic placeholder:text-gray-500/75 text-xl"
                     rows="12" placeholder="Your note..." id="">{{ $note->content }}</textarea>
             </div>
-            <div class="py-5 flex gap-4 justify-end">
+            <div class="py-5 flex gap-4 justify-center sm:justify-end ">
+
                 <button class="btn btn-positive" type="submit">Save</button>
                 <a class="btn btn-negative " href="{{ route('notes.index') }}">Cancel</a>
             </div>
+        </form>
+        <form class="flex justify-center sm:justify-start" action="{{ route('notes.destroy', $note) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="sm:-translate-y-16 btn bg-red-500 hover:bg-red-900 transition" type="submit">DELETE</button>
         </form>
     </div>
 </x-layout>

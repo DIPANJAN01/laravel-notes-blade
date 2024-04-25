@@ -4,6 +4,10 @@
     </div>
     <div
         class="container px-5 py-5 mx-auto grid max-w-[64rem] justify-items-center grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12">
+        @if (count($notes) === 0)
+            <h3 class="text-center mt-20 col-span-3 italic text-neutral-400 text-4xl">Add your first note!</h3>
+        @endif
+
         @foreach ($notes as $note)
             <div class="card w-80">
                 <h5 class=" p-1 border-b-2 border-slate-600/50 mb-3 text-xl card-title">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
@@ -12,7 +13,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $Notes = Note::orderBy("created_at", "desc")->paginate(12);
+
+        $Notes = Note::where('user_id', Auth::id())->orderBy("created_at", "desc")->paginate(12);
         return view("notes.index", ['notes' => $Notes])->with("title", "All notes");
     }
 
@@ -34,7 +36,7 @@ class NoteController extends Controller
             'content' => ['required', 'string']
         ]);
         // dd($validatedData);
-        $validatedData['user_id'] = 1;
+        $validatedData['user_id'] = Auth::id();
         $note = Note::create($validatedData);
         // dd($note);
         return to_route("notes.index");
@@ -45,7 +47,11 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        return "show " . $note->content;
+        if (Auth::id() !== $note->user_id) {
+            abort('403');
+        }
+        // return "show " . $note->content;
+        return to_route('notes.edit', ['note' => $note]);
     }
 
     /**
@@ -53,6 +59,9 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
+        if (Auth::id() !== $note->user_id) {
+            abort('403');
+        }
         return view("notes.edit", ['note' => $note]);
     }
 
@@ -61,10 +70,15 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
+        if (Auth::id() !== $note->user_id) {
+            abort('403');
+        }
+
         $validatedData = $request->validate([
             'title' => ['nullable', 'string'],
             'content' => ['required', 'string'],
         ]);
+        // dd($validatedData);
         $note->update($validatedData);
         return to_route("notes.index");
     }
@@ -74,6 +88,9 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
+        if (Auth::id() !== $note->user_id) {
+            abort('403');
+        }
         $note->delete();
         return to_route('notes.index');
     }
