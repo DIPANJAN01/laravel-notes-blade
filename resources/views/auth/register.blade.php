@@ -11,6 +11,8 @@
             action="{{ route('registerPost') }}" method="POST">
             @csrf
 
+            <h4 class="px-6 py-4 col-span-2 text-3xl text-neutral-300">Create your account</h4>
+
             <label class="text-white md:justify-self-center" for="username">Username</label>
             <input placeholder="your username..." class="placeholder:italic placeholder:text-sm px-1.5 py-0.5 rounded-sm"
                 type="text" name="username" id="username">
@@ -24,8 +26,13 @@
                 class="placeholder:italic placeholder:text-sm px-1.5 py-0.5 rounded-sm" type="password" name="password"
                 id="password">
 
+
             <button class="btn btn-negative my-6 md:-mb-2 md:mt-2 md:col-span-2 md:justify-self-center"
                 type="submit">Register</button>
+            <h2 class="text-center mt-8 col-span-2 text-neutral-300">
+                Already have an account? <a class="text-blue-300 p-0 hover:text-green-400 underline underline-offset-3"
+                    href="{{ route('login') }}">Login</a> instead.
+            </h2>
         </form>
     </div>
 

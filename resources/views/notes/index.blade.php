@@ -9,7 +9,7 @@
         @endif
 
         @foreach ($notes as $note)
-            <div class="card w-80">
+            <div class="card w-80 break-words">
                 <h5 class=" p-1 border-b-2 border-slate-600/50 mb-3 text-xl card-title">
                     @if ($note->title)
                         {{ $note->title }}
@@ -18,7 +18,9 @@
                     @endif
                 </h5>
                 {{-- <p class="card-text h-36 truncate-ellipses">{{ Str::words($note->content, 30) }}</p> --}}
-                <p class="card-text mb-7">{{ Str::limit($note->content, 197) }}</p>
+
+                <p class="mb-7">{{ Str::limit($note->content, 197) }}</p>
+
                 <div class="mt-auto flex justify-end gap-5">
                     <a href="{{ route('notes.edit', $note) }}" class="btn btn-blue">Edit note</a>
                     <form action="{{ route('notes.destroy', $note) }}" method="POST">

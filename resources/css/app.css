@@ -12,6 +12,9 @@
     a:visited {
         @apply p-2 rounded-md transition;
     }
+    h2 a {
+        padding: 0 !important;
+    }
     a:hover,
     a:visited {
         @apply cursor-pointer;
