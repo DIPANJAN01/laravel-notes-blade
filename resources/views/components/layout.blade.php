@@ -25,6 +25,11 @@
             @auth
                 <li><a href="{{ route('notes.index') }}">Home</a></li>
                 <li><a href="{{ route('logout') }}">Logout</a></li>
+                <li class="ml-auto">
+                    <a class=""
+                        href="{{ route('user.edit') }}">{{ auth()->user()->username ? auth()->user()->username : 'Profile' }}
+                    </a>
+                </li>
                 @elseguest
                 <li><a href="{{ route('registerForm') }}">Register</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>

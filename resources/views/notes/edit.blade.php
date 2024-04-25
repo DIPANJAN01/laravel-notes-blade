@@ -20,7 +20,7 @@
         <form class="flex justify-center sm:justify-start" action="{{ route('notes.destroy', $note) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="sm:-translate-y-16 btn bg-red-500 hover:bg-red-900 transition" type="submit">DELETE</button>
+            <button class="sm:-translate-y-16 btn btn-danger transition" type="submit">DELETE</button>
         </form>
     </div>
 </x-layout>

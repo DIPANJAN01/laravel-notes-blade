@@ -1,7 +1,7 @@
 <x-layout>
     <div class="text-white flex justify-center container mx-auto mt-8 max-w-[64rem] px-5">
         @session('message')
-            <p class="p-2 text-center bg-red-500 text-white text-xl">{{ session('message') }}</p>
+            <p class="rounded p-2 text-center bg-red-500 text-white text-xl">{{ session('message') }}</p>
         @endsession
     </div>
     <div class="container mx-auto  mt-8 max-w-[64rem] px-5">
@@ -11,7 +11,7 @@
             action="{{ route('registerPost') }}" method="POST">
             @csrf
 
-            <h4 class="px-6 py-4 col-span-2 text-3xl text-neutral-300">Create your account</h4>
+            <h4 class="px-6 py-4 md:col-span-2 text-3xl text-neutral-300">Create your account</h4>
 
             <label class="text-white md:justify-self-center" for="username">Username</label>
             <input placeholder="your username..." class="placeholder:italic placeholder:text-sm px-1.5 py-0.5 rounded-sm"
@@ -29,7 +29,7 @@
 
             <button class="btn btn-negative my-6 md:-mb-2 md:mt-2 md:col-span-2 md:justify-self-center"
                 type="submit">Register</button>
-            <h2 class="text-center mt-8 col-span-2 text-neutral-300">
+            <h2 class="text-center mt-8 md:col-span-2 text-neutral-300">
                 Already have an account? <a class="text-blue-300 p-0 hover:text-green-400 underline underline-offset-3"
                     href="{{ route('login') }}">Login</a> instead.
             </h2>

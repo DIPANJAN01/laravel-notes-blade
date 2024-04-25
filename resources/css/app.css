@@ -57,7 +57,9 @@
     .btn-negative {
         @apply bg-pink-800 hover:bg-pink-900;
     }
-
+    .btn-danger {
+        @apply bg-red-900 hover:bg-red-500;
+    }
     .form {
         display: grid;
         grid-template-columns: 1fr 2fr;
