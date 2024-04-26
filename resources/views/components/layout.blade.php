@@ -19,11 +19,11 @@
 <body class="antialiased">
 
     <nav
-        class="z-50  py-4 px-7 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl bg-rose-800 text-white shadow-lg sticky top-0 mb-2 bg-opacity-85">
+        class="z-50  py-4 px-7 text-base md:text-lg lg:text-xl xl:text-2xl bg-rose-800 text-white shadow-lg sticky top-0 mb-2 bg-opacity-85">
         <ul class="flex flex-row gap-5">
             <li><a href="{{ route('notes.index') }}">NOTES</a></li>
             @auth
-                <li><a href="{{ route('notes.index') }}">Home</a></li>
+                {{-- <li><a href="{{ route('notes.index') }}">Home</a></li> --}}
                 <li><a href="{{ route('logout') }}">Logout</a></li>
                 <li class="ml-auto">
                     <a class=""

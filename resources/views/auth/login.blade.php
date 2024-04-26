@@ -30,7 +30,8 @@
                 type="submit">Login</button>
 
             <h2 class="text-center mt-8 md:col-span-2 text-neutral-300">
-                Don't have an account? <a class="text-blue-300 p-0 hover:text-green-400 underline underline-offset-3"
+                Don't have an account? <a
+                    class="text-blue-300 p-0 hover:text-green-400 active:text-green-400 underline underline-offset-3"
                     href="{{ route('registerForm') }}">Signup</a> for free!
             </h2>
         </form>

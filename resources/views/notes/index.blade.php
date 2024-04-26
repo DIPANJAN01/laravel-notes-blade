@@ -26,7 +26,7 @@
                     <form action="{{ route('notes.destroy', $note) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-negative">
+                        <button type="submit" class="btn btn-danger">
                             Delete note
                         </button>
                         {{-- <a href="{{ route('notes.destroy', $note) }}" class="card-link link-delete">Delete note</a> --}}

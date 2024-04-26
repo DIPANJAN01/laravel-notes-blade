@@ -30,7 +30,8 @@
             <button class="btn btn-negative my-6 md:-mb-2 md:mt-2 md:col-span-2 md:justify-self-center"
                 type="submit">Register</button>
             <h2 class="text-center mt-8 md:col-span-2 text-neutral-300">
-                Already have an account? <a class="text-blue-300 p-0 hover:text-green-400 underline underline-offset-3"
+                Already have an account? <a
+                    class="text-blue-300 p-0 hover:text-green-400 active:text-green-400 underline underline-offset-3"
                     href="{{ route('login') }}">Login</a> instead.
             </h2>
         </form>
