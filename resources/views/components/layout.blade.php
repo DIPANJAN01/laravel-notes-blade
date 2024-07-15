@@ -9,9 +9,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>
         @if (isset($title))
-            <p>{{ $title }}</p>
+            {{ $title }}
         @else
-            <p>Welcome</p>
+            Welcome
         @endif
     </title>
 </head>
